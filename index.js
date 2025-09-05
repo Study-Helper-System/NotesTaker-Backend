@@ -55,6 +55,22 @@ app.delete('/notes/:id', async (req, res) => {
   res.json({ success: true });
 });
 
+
+// Gemini LLM endpoint (mocked)
+app.post('/api/gemini', async (req, res) => {
+  const { text, action } = req.body;
+  let result = text;
+  if (action === 'restructure') {
+    // Mock: reverse the text as a placeholder for restructuring
+    result = text.split('').reverse().join('');
+  } else if (action === 'highlight') {
+    // Mock: wrap the text in ** for markdown highlight
+    result = `**${text}**`;
+  }
+  // TODO: Replace above logic with Gemini LLM API call
+  res.json({ result });
+});
+
 app.listen(5000, () => {
   console.log('Backend running on http://localhost:5000');
 });
