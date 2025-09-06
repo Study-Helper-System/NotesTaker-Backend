@@ -1,3 +1,5 @@
+![notestakingservicecoverimage](./public/coverimage.png)
+
 ## How to Run ?
 - install packages
     ```
